@@ -1,0 +1,67 @@
+  @font-face { font-family: Mydosis; src: url('Dosis-Light.TTF'); } 
+*{
+  font-family: Mydosis;
+  color: green;
+  /*letter-spacing: 0.05em;*/
+}
+a{
+  color: green;
+}
+.navbar-toggle .icon-bar{
+  background-color: green;
+}
+ .navbar{
+  	margin-bottom: 0px;
+  }
+  .navbar a{
+    color: green;
+    font-family: Mydosis;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .navbar-alignit .navbar-header {
+	  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+.navbar-alignit .navbar-brand {
+	top: 50%;
+	display: block;
+	position: relative;
+	height: auto;
+	transform: translate(0,-50%);
+	margin-right: 15px;
+  margin-left: 15px;
+  font-size: 50px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+	z-index: 9999;
+}
+
+body {
+  font-family: "Lato";
+}
+ .navbar-brand {
+  padding: 30px;
+  font-size: 50px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: 20vw;
+}
+.example3 .navbar-brand {
+  height: 80px;
+  font-size: 50px;
+}
+
+.example3 .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.example3 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}

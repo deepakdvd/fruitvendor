@@ -1,0 +1,16 @@
+{
+  "name": "fruit",
+  "version": "1.0.0",
+  "description": "website",
+  "main": "server.js",
+  "scripts": {
+    "test": "a"
+  },
+  
+  "author": "deepak",
+  "license": "ISC",
+  "engines": {
+    "node": "4.1.1"
+  }
+}
+
