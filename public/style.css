@@ -1,6 +1,7 @@
-  @font-face { font-family: Mydosis; src: url('Dosis-Light.TTF'); } 
+  @import url('https://fonts.googleapis.com/css?family=Dosis');
+  @font-face { font-family: 'Dosis', sans-serif; } 
 *{
-  font-family: Mydosis;
+  font-family: 'Dosis', sans-serif;
   color: green;
   /*letter-spacing: 0.05em;*/
 }
@@ -15,7 +16,7 @@ a{
   }
   .navbar a{
     color: green;
-    font-family: Mydosis;
+    font-family: 'Dosis', sans-serif;
     font-size: 16px;
     font-weight: 500;
   }
