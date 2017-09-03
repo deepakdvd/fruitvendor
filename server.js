@@ -41,7 +41,7 @@ app.post('/email', function(req, res){
 
 	var mailOptions = {
 	  from: 'deepakdesai0906@gmail.com',
-	  to: "jadhav.karan123@gmail.com",
+	  to: 'deepakdesai19@gmail.com',
 	  subject: 'Picagroexporter',
 	  html: '<h1 style="text-align:center"><a href="picagroexporter.com">Picagroexporter.com</a></h1><br><h2>Ordered By '+req.body.yrname+'</h2><br>Name: <b>'+req.body.yrname+'</b><br>Contact No: <a href="tel:'+req.body.conno+'"><b>'+req.body.conno+'</b></a><br>Email Id: <b>'+req.body.email+'</b><br>Order Description: <b>'+req.body.desc+'</b><br>Order Quantity: <b>'+req.body.quantity+' '+req.body.size+'</b><br>Type: <b>'+req.body.type+'</b><br>Destination Port: <b>'+req.body.port+'</b><br>Shipping By: <b>'+req.body.shipby
 	};
