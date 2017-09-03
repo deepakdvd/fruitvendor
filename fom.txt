@@ -1,0 +1,1 @@
+action="/email" method="post" id="getsub1"  onsubmit="alert('Thank you for your order')"
