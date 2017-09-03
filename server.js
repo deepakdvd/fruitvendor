@@ -57,9 +57,9 @@ app.get('/contact',function(req,res){
 // });
 
 
-// http.listen(app.get('port'), function(){
-//   console.log('listening on *:'+app.get('port'));
-// });
+http.listen(app.get('port'), function(){
+  console.log('listening on *:'+app.get('port'));
+});
 
 // var port = process.env.PORT || 8000;
 // server.listen(port, function() {
