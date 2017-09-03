@@ -5,7 +5,7 @@ var app=ex();
 var http = require('http').Server(app);
 var bParser = require('body-parser');
 //var fs = require('fs-extra'); 
-// app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3000));
 //console.log('main index.js');
 
 //var urlencodedParser = bodyParser.urlencoded({ extended: false })
