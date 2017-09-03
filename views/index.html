@@ -1,26 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favi.jpg" type="image/jpg" sizes="32x32">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
-    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
         <!-- Bootstrap bootstrap-touch-slider Slider Main Style Sheet -->
         <link href="bootstrap-touch-slider.css" rel="stylesheet" media="all">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet"  href="lightslider.css"/>
+
+<style>
+
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+
+  .main-glamorous {
+    text-align: center;
+    margin-bottom: 10vh;
+    padding: 0 15px;
+}
+.main-glamorous .wrapper-img-glamorous {
+    display: inline-block;
+    position: relative;
+}
+.main-glamorous img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+.main-glamorous .links-icons-gla {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #125f06;
+    margin-bottom: 10px;
+    display: block;
+}
+.main-glamorous .text-gla {
+    margin-bottom: 0;
+}
+.text-gla{
+  font-size: 1.1em;
+}
+
+.main-glamorous:hover .wrapper-img-glamorous:before {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+.main-glamorous .wrapper-img-glamorous:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70%;
+    height: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #125f06;
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0);
+    -moz-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+}
+.servi{
+  padding: 2vw;
+}
+.eximfc{
+ 
+  font-size: 2em;
+  height: 30vh;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+.eximfc:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); 
+  }
+  .eximfc2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .eximfc3{
+    font-size: 0.6em;
+  }
+.viewall{
+  background-color: green;
+  color: white;
+  padding-left: 30px;padding-right: 30px;
+}
+ /* @media (max-width:1200px) and (min-width:768px) {
+    .eximfc{
+      font-size: 5vw;
+    }
+    .eximfc3{
+      font-size: 3vw;
+    }
+}
+}*/
+@media (max-width:1024px) and (min-width:768px){
+  .eximfc{
+    height: 20vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+    .eximfc{
+      font-size: 1.6em;
+    }
+    .eximfc3{
+      font-size: 0.5em;
+    }
+}
+@media only screen and (max-width: 520px) {
+    .eximfc{
+      font-size: 1.6em;
+    }
+    .eximfc3{
+      font-size: 0.6em;
+    }
+}
+
+  </style>
+
+    <style>
+      ul{
+      list-style: none outside none;
+        padding-left: 0;
+            margin: 0;
+    }
+        .demo .item{
+            margin-bottom: 60px;
+        }
+    .content-slider li{
+        text-align: center;
+        color: #FFF;
+    }
+    .content-slider h3 {
+        margin: 0;
+        padding: 70px 0;
+    }
+   .ossvn--footer {
+    background: #f3f3f3;
+    margin-top: 210px;
+    position: relative;
+    padding-top: 40px;
+    color: #666;
+}
+.ossvn--footer:before {
+    content: "";
+    width: 100%;
+    height: 160px;
+    background: url(bg-footer.png) center bottom no-repeat;
+    position: absolute;
+    top: -157px;
+    left: 0;
+}
+.social{
+  font-size: 25px;
+  padding: 10px;
+}
+.social:hover{
+  text-shadow: 0px 0px 2px black;
+}
+.phno{
+  letter-spacing: 0.1em;
+}
+
+a.effect-underline:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+a.effect-underline:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+ul.nav a:hover { background-color: transparent !important; }
+    </style>
+     
  <script src="lightslider.js"></script> 
- <script src="js/script.js"></script> 
+ <script>
+       $(document).ready(function() {
+      $("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:9,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+    });
+    </script>
+
 </head>
 <body>
 
-<% include ../views/navbar %>
+<div class="container-fluid" id="headtop">
+  <div class="row">
+  	<div class="example3">
+  <nav class="navbar navbar-static-top ">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PIC Fruits
+        </a>
+      </div>
+      <div id="navbar3" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active "><a href="#" class="effect-underline">HOME</a></li>
+          <li><a href="#" class="effect-underline">PRODUCT</a></li>
+          <li><a href="#" class="effect-underline">SERVICES</a></li>
+          <li><a href="#" class="effect-underline">ABOUT US</a></li>
+          <li><a href="#" class="effect-underline">CONTACT</a></li>
+          <!-- <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DROPDOWN <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+</div>
 
 
  <div id="abcd" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
@@ -252,10 +535,106 @@
             </div>
         </div>
 </div>
-<% include ../views/footer %>
 
+<div class="col-sm-12 ossvn--footer slideanim">
+  <div class="col-sm-4 text-center" style="padding-top:50px;padding-bottom: 50px">
+    <h2><b>Sitemap</b></h2>
+      <h4>HOME</h4>
+      <h4>PRODUCT</h4>
+      <h4>SERVICES</h4>
+      <h4>ABOUT US</h4>
+      <h4>CONTACT</h4>
+  </div>
+  <div class="col-sm-4 text-center" style="padding-top:50px;padding-bottom: 50px">
+    <h2><b>Get in Touch</b></h2>
+      <h4><i class="fa fa-facebook social" aria-hidden="true"></i>
+      <i class="fa fa-twitter social" aria-hidden="true"></i>
+      <i class="fa fa-linkedin social" aria-hidden="true"></i>
+      <i class="fa fa-google-plus social" aria-hidden="true"></i>
+      <i class="fa fa-skype social" aria-hidden="true"></i></h4>
+  </div>
+  <div class="col-sm-4 text-center" style="padding-top:50px;padding-bottom: 50px">
+    <h2><b>Contact</b></h2>
+    <h4  class="phno"><i class="fa fa-phone" aria-hidden="true"></i>
+ +91 7715941505</h4>
+    <h4 class="phno"><i class="fa fa-phone" aria-hidden="true"></i>
+ +91 8169559209</h4>
+  </div>
+</div>
+
+
+<div class="col-sm-12" style="background: #f3f3f3;border-top: 1px solid #e3e3e3">
+  <div class="col-sm-6 text-center" style="padding-top:20px;padding-bottom: 20px;"><i class="fa fa-copyright" aria-hidden="true"></i> 2017 Pellucid International Commerce Pvt Ltd.</div>
+  <div class="col-sm-6 text-center" style="padding-top:20px;padding-bottom: 20px;"><a href="#headtop">Go to TOP <i class="fa fa-arrow-up" aria-hidden="true"></i></a></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
 <script src="bootstrap-touch-slider.js"></script>
+        
+        <script type="text/javascript">
+            $('#abcd').bsTouchSlider();
+        </script>
+
+
+        <script>
+$(document).ready(function(){
+  // // Add smooth scrolling to all links in navbar + footer link
+  // $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  //   // Make sure this.hash has a value before overriding default behavior
+  //   if (this.hash !== "") {
+  //     // Prevent default anchor click behavior
+  //     event.preventDefault();
+
+  //     // Store hash
+  //     var hash = this.hash;
+
+  //     // Using jQuery's animate() method to add smooth page scroll
+  //     // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+  //     $('html, body').animate({
+  //       scrollTop: $(hash).offset().top
+  //     }, 900, function(){
+   
+  //       // Add hash (#) to URL when done scrolling (default click behavior)
+  //       window.location.hash = hash;
+  //     });
+  //   } // End if
+  // });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+
+
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
 </body>
 </html>
