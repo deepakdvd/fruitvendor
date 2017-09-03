@@ -33,14 +33,14 @@ app.get('/email', function(req, res){
 	var transporter = nodemailer.createTransport({
 	  service: "Gmail",
 	  auth: {
-	    user: 'deepakdesai0906@gmail.com',
+	    user: 'deepakdesai0906',
 	    pass: 'Cocubesdeepak'
 	  }
 	});
 
 	var mailOptions = {
-	  from: 'deepakdesai0906@gmail.com',
-	  to: 'deepakdesai19@gmail.com',
+	  from: 'deepakdesai0906',
+	  to: 'deepakdesai19',
 	  subject: 'Picagroexporter',
 	  html: '<h1 style="text-align:center"><a href="picagroexporter.com">Picagroexporter.com</a></h1><br><h2>Ordered By '+req.query.yrname+'</h2><br>Name: <b>'+req.query.yrname+'</b><br>Contact No: <a href="tel:'+req.query.conno+'"><b>'+req.query.conno+'</b></a><br>Email Id: <b>'+req.query.email+'</b><br>Order Description: <b>'+req.query.desc+'</b><br>Order Quantity: <b>'+req.query.quantity+' '+req.query.size+'</b><br>Type: <b>'+req.query.type+'</b><br>Destination Port: <b>'+req.query.port+'</b><br>Shipping By: <b>'+req.query.shipby
 	};
