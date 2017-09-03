@@ -4,7 +4,7 @@
   "description": "website",
   "main": "index.js",
   "scripts": {
-    "test": "a"
+    "start": "node index.js"
   },
   
   "author": "deepak",
