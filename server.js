@@ -1,6 +1,6 @@
 'use strict';
 var ex = require('express');
-var nodemailer = require('nodemailer');
+//var nodemailer = require('nodemailer');
 var app=ex();
 var http = require('http').Server(app);
 var bParser = require('body-parser');
@@ -27,34 +27,34 @@ app.get('/contact',function(req,res){
 	res.render('contact');
 	});
 
-app.get('/email', function(req, res){
+// app.get('/email', function(req, res){
 
 
-	var transporter = nodemailer.createTransport({
-	  service: "Gmail",
-	  auth: {
-	    user: 'deepakdesai0906',
-	    pass: 'Cocubesdeepak'
-	  }
-	});
+// 	var transporter = nodemailer.createTransport({
+// 	  service: "Gmail",
+// 	  auth: {
+// 	    user: 'deepakdesai0906@gmail.com',
+// 	    pass: 'Cocubesdeepak'
+// 	  }
+// 	});
 
-	var mailOptions = {
-	  from: 'deepakdesai0906',
-	  to: 'deepakdesai19',
-	  subject: 'Picagroexporter',
-	  html: '<h1 style="text-align:center"><a href="picagroexporter.com">Picagroexporter.com</a></h1><br><h2>Ordered By '+req.query.yrname+'</h2><br>Name: <b>'+req.query.yrname+'</b><br>Contact No: <a href="tel:'+req.query.conno+'"><b>'+req.query.conno+'</b></a><br>Email Id: <b>'+req.query.email+'</b><br>Order Description: <b>'+req.query.desc+'</b><br>Order Quantity: <b>'+req.query.quantity+' '+req.query.size+'</b><br>Type: <b>'+req.query.type+'</b><br>Destination Port: <b>'+req.query.port+'</b><br>Shipping By: <b>'+req.query.shipby
-	};
+// 	var mailOptions = {
+// 	  from: 'deepakdesai0906@gmail.com',
+// 	  to: 'deepakdesai19@gmail.com',
+// 	  subject: 'Picagroexporter',
+// 	  html: '<h1 style="text-align:center"><a href="picagroexporter.com">Picagroexporter.com</a></h1><br><h2>Ordered By '+req.query.yrname+'</h2><br>Name: <b>'+req.query.yrname+'</b><br>Contact No: <a href="tel:'+req.query.conno+'"><b>'+req.query.conno+'</b></a><br>Email Id: <b>'+req.query.email+'</b><br>Order Description: <b>'+req.query.desc+'</b><br>Order Quantity: <b>'+req.query.quantity+' '+req.query.size+'</b><br>Type: <b>'+req.query.type+'</b><br>Destination Port: <b>'+req.query.port+'</b><br>Shipping By: <b>'+req.query.shipby
+// 	};
 
-	transporter.sendMail(mailOptions, function(error, info){
-	  if (error) {
-	    console.log(error);
-	  } else {
-	    console.log('Email sent: ' + info.response);
-	  }
-	});
+// 	transporter.sendMail(mailOptions, function(error, info){
+// 	  if (error) {
+// 	    console.log(error);
+// 	  } else {
+// 	    console.log('Email sent: ' + info.response);
+// 	  }
+// 	});
 
-	res.redirect('/contact');
-});
+// 	res.redirect('/contact');
+// });
 
 
 http.listen(app.get('port'), function(){
