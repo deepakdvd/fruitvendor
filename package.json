@@ -1,8 +1,8 @@
 {
   "name": "fruit",
-  "version": "1.0.0",
+  "version": "17.0.0",
   "description": "website",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "a"
   },
