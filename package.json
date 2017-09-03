@@ -4,7 +4,7 @@
   "description": "website",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "mocha"
   },
   
   "author": "deepak",
