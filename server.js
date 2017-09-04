@@ -65,7 +65,7 @@ console.log("jhj");
    host: 'smtp.zoho.com',
     port: 465,
     secure: true, 
-    service: 'gmail',
+    service: 'Gmail',
   auth: {
     user: 'deepakdesai0906@gmail.com',
     pass: 'Cocubesdeepak'
@@ -87,7 +87,7 @@ transporter.sendMail(mailOptions, function(error, info){
   }
 });
 
-res.redirect('/contact');
+
 
 });
 
