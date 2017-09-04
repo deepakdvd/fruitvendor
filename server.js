@@ -65,7 +65,7 @@ console.log("jhj");
    host: 'smtp.zoho.com',
     port: 465,
     secure: true, 
-    service: 'Gmail',
+    service: 'gmail',
   auth: {
     user: 'deepakdesai0906@gmail.com',
     pass: 'Cocubesdeepak'
