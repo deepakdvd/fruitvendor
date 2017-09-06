@@ -31,6 +31,10 @@ app.get('/about',function(req,res){
 	res.render('about');
 	});
 
+app.get('/products',function(req,res){
+	res.render('products');
+	});
+
 // app.get('/email', function(req, res){
 
 
