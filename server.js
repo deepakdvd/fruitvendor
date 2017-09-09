@@ -1,6 +1,6 @@
 'use strict';
 var ex = require('express');
-// var nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 var app=ex();
 var http = require('http').Server(app);
 var bParser = require('body-parser');
