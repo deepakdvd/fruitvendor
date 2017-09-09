@@ -1,6 +1,6 @@
 'use strict';
 var ex = require('express');
-var nodemailer = require('nodemailer');
+// var nodemailer = require('nodemailer');
 var app=ex();
 var http = require('http').Server(app);
 var bParser = require('body-parser');
@@ -66,38 +66,38 @@ app.get('/products',function(req,res){
 
 
 
-app.post('/email',function(req, res){
+// app.post('/email',function(req, res){
 
-console.log("jhj");
-  var transporter = nodemailer.createTransport({
-   host: 'smtp.zoho.com',
-    port: 465,
-    secure: true, 
-    service: 'gmail',
-  auth: {
-    user: 'deepakdesai0906@gmail.com',
-    pass: 'Cocubesdeepak'
-  }
-});
+// console.log("jhj");
+//   var transporter = nodemailer.createTransport({
+//    host: 'smtp.zoho.com',
+//     port: 465,
+//     secure: true, 
+//     service: 'gmail',
+//   auth: {
+//     user: 'deepakdesai0906@gmail.com',
+//     pass: 'Cocubesdeepak'
+//   }
+// });
 
-var mailOptions = {
-  from: 'deepakdesai0906@gmail.com',
-  to: 'deepakdesai19@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy! what do you say dued'
-};
+// var mailOptions = {
+//   from: 'deepakdesai0906@gmail.com',
+//   to: 'deepakdesai19@gmail.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy! what do you say dued'
+// };
 
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
 
 
 
-});
+// });
 
 
 
