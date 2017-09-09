@@ -7,6 +7,14 @@
     "test": "mocha"
   },
   
+  "dependencies" :{
+"express":"*",
+"http":"*",
+"nodemailer":"*",
+"body-parser":"*",
+"ejs":"*"
+},
+
   "author": "deepak",
   "license": "ISC",
   "engines": {
