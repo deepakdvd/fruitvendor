@@ -74,12 +74,12 @@ app.post('/email',function(req, res){
 
 console.log("jhj");
   var transporter = nodemailer.createTransport({
-   host: 'smtp.gmail.com',
+   host: 'smtp.zoho.com',
     port: 465,
     secure: true, 
   auth: {
-    user: 'deepakdesai0906@gmail.com',
-    pass: 'Cocubesdeepak'
+    user: 'deepakdesai19@picagroexporter.com',
+    pass: '*2468492383@sandvd'
   }
 });
 
