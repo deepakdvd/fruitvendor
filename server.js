@@ -72,18 +72,18 @@ app.get('/services',function(req,res){
 
 app.post('/email',function(req, res){
 
-console.log("jhj");
-  var transporter = nodemailer.createTransport({
-   host: 'smtp.zoho.com',
+
+  let transporter = nodemailer.createTransport({
+   host: 'smtp.gmail.com',
     port: 465,
     secure: true, 
   auth: {
-    user: 'deepakdesai19@picagroexporter.com',
-    pass: '*2468492383@sandvd'
+    user: 'deepakdesai0906@gmail.com',
+    pass: 'Cocubesdeepak'
   }
 });
 
-var mailOptions = {
+let mailOptions = {
   from: 'deepakdesai0906@gmail.com',
   to: 'deepakdesai19@gmail.com',
   subject: 'Sending Email using Node.js',
@@ -97,7 +97,7 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Email sent: ' + info.response);
   }
 });
-
+console.log("jhjasdasssssssssssssssssssssssssssssssssssssssssssssss");
 res.redirect('/contact');
 
 });
