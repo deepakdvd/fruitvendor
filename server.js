@@ -75,7 +75,7 @@ app.post('/email',function(req, res){
 console.log("jhj");
   var transporter = nodemailer.createTransport({
    host: 'smtp.zoho.com',
-    port: 465,
+    port: 587,
     secure: true, 
     service: 'gmail',
   auth: {
