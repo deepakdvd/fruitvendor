@@ -73,18 +73,18 @@ app.get('/services',function(req,res){
 app.post('/email',function(req, res){
 
 
-  let transporter = nodemailer.createTransport({
-   host: 'smtp.gmail.com',
+  var transporter = nodemailer.createTransport({
+   host: 'smtp.zoho.com',
     port: 465,
     secure: true, 
   auth: {
-    user: 'deepakdesai0906@gmail.com',
-    pass: 'Cocubesdeepak'
+    user: 'deepakdesai19@picagroexporter.com',
+    pass: '*2468492383@sandvd'
   }
 });
 
-let mailOptions = {
-  from: 'deepakdesai0906@gmail.com',
+var mailOptions = {
+  from: 'deepakdesai19@picagroexporter.com',
   to: 'deepakdesai19@gmail.com',
   subject: 'Sending Email using Node.js',
   text: 'That was easy! what do you say dued'
@@ -92,7 +92,7 @@ let mailOptions = {
 
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
-    console.log(error);
+    return console.log(error);
   } else {
     console.log('Email sent: ' + info.response);
   }
