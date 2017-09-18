@@ -77,7 +77,6 @@ console.log("jhj");
    host: 'smtp.gmail.com',
     port: 465,
     secure: true, 
-    service: 'gmail',
   auth: {
     user: 'deepakdesai0906@gmail.com',
     pass: 'Cocubesdeepak'
