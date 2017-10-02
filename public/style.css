@@ -373,3 +373,17 @@ ul.nav a:hover { background-color: transparent !important; }
 #gitou{
   background-color: green;border-color: green
 }
+.parallax { 
+      background-image: url("img/fvg.jpg");
+      height: 200px; 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  .nav-tabs {
+      text-align:center;
+  }
+  .brdbtm{
+    border-bottom: 1px solid #eee;
+  }
