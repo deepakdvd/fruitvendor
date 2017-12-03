@@ -139,7 +139,8 @@
         url: '/delete?id='+a,
          success: function(data) {
             alert('product successfully deleted');
-           location.reload();
+            window.location.href = '/dashboard';
+           // location.reload();
       }
         
 });
