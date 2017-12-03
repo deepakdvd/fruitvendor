@@ -3,9 +3,9 @@
 var cloudy=require('cloudinary');
 
 cloudy.config({ 
-  cloud_name: '//enter cloud-name here', 
-  api_key: '//enter api key here ', 
-  api_secret: '// enter api secreate key here' 
+  cloud_name: 'www-picagroexporter-com', 
+  api_key: '545531692123958', 
+  api_secret: 'wKiNPsmL2LZqaglbgKFMJ01EXiQ' 
 });
 exports.ob= function(){
 	return cloudy ;
