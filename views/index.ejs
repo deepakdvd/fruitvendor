@@ -111,13 +111,17 @@
 </div>
 
 <div class="col-sm-12" >
-	<h1 class="text-center" style="padding-top: 50px;padding-bottom: 50px;font-size: 50px;">Products</h1>
+  <h1 class="text-center" style="padding-top: 50px;padding-bottom: 50px;font-size: 50px;">Products</h1>
         <div class="item slideanim" style="padding-left: 10%;padding-right: 10%">
             <ul id="content-slider" class="content-slider" >
+            <% if(products){
+            products.forEach(function(prod){%>
                 <li class="text-center">
-                    <img src="apple.png" class="img-responsive">
+                    <%-cloudy.image(prod.image.cn,{ width: 400, height: 400 })%>
+                    <!-- <img src="apple.png" class="img-responsive"> -->
                 </li>
-                <li class="text-center">
+                <%});}%>
+                <!-- <li class="text-center">
                     <img src="banana.png" class="img-responsive">
                 </li>
                 <li class="text-center">
@@ -131,7 +135,7 @@
                 </li>
                 <li class="text-center">
                     <img src="Pineapple.png" class="img-responsive">
-                </li>
+                </li> -->
             </ul>
         </div>
 
