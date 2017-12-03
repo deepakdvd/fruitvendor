@@ -4,6 +4,18 @@ var nodemailer = require('nodemailer');
 var app=ex();
 var http = require('http').Server(app);
 var bParser = require('body-parser');
+var ObjectId = require('mongoskin').ObjectID;
+const db1=require('./app/dbconnect');
+var db = db1.fdata();
+var cParser = require('cookie-parser');
+var session = require('client-sessions');
+var busboy = require('connect-busboy');
+var cloudy=require('./app/cloudinary').ob();
+
+app.use(busboy());
+//var fs = require('fs-extra'); 
+app.use(cParser());
+
 //var fs = require('fs-extra'); 
 app.set('port', (process.env.PORT || 3000));
 //console.log('main index.js');
@@ -13,6 +25,17 @@ app.set('port', (process.env.PORT || 3000));
 //app.engine('html',require('hogan-express'));
 app.set('view engine','ejs');
 app.use(ex.static('public'));
+app.enable ('view cache');
+
+app.use(session({
+  cookieName: 'session',
+  secret: 'naio1#2ospox9029(*&9{}nskjn;;',
+  duration: 30*60*1000,//24 * 60 * 60 * 1000,
+  //activeDuration: 5 * 60 * 1000,
+   httpOnly: true,
+  secure: true,
+  ephemeral: true
+}));
    
 //app.set ('partials', {foo: 'foo'});   
 
@@ -20,31 +43,50 @@ app.use(bParser.json());
 app.use(bParser.urlencoded({extended:false}));
 
 app.get('/',function(req,res){
-	res.render('index');
-	});
+  db.collection('fruits').find({}).toArray(function(err, result){
+    
+    res.render('index', {products:result,cloudy:cloudy});
+  });
+  
+  });
 
 app.get('/contact',function(req,res){
-	res.render('contact');
-	});
+  res.render('contact');
+  });
 
 app.get('/about',function(req,res){
-	res.render('about');
-	});
+  res.render('about');
+  });
 
 app.get('/products',function(req,res){
-	res.render('products');
-	});
+  res.render('products');
+  });
 
 app.get('/services',function(req,res){
-	res.render('services');
-	});
+  res.render('services');
+  });
 
 app.get('/dashboard',function(req,res){
-  res.render('dashboard');
+  if (!req.user&&!req.session.user) {
+           
+          res.redirect('/login');
+        }else{
+          db.collection('fruits').find({}).toArray(function(err, result){
+          if (req.query.resp) {
+               res.render('dashboard',{send:req.query.resp,products:result,cloudy:cloudy});
+          }else{
+            res.render('dashboard',{send:false,products:result,cloudy:cloudy});
+          }
+           });
+        }
   });
 
 app.get('/login',function(req,res){
+  if (req.user && req.session.user) {
+    res.redirect('/dashboard');
+  }else{
   res.render('login');
+  }
   });
 
 
@@ -81,17 +123,127 @@ res.redirect('/contact');
 
 });
 
+app.post('/session-access',function(req,res){
+  
+        var user;
+        var name= req.body.name;
+        var pass= req.body.pass;
+        if (name=="Admin" && pass=="Admin"){
+          
+          req.session.user = name;
+          res.redirect('/dashboard');
+        }
+        else{
+          res.redirect('/login?resp=invalid');
+        }
+});
 
+app.post('/proadd',function(req,res){
+
+  var img,cn,imn;
+req.busboy.on('field', function(fieldname, val) {
+     
+     if(fieldname==="imgname"){
+      img=val;
+      
+   }
+     
+});
+
+  req.busboy.on('file', function (fieldname, file, filename) {
+             
+     
+        var stream = cloudy.uploader.upload_stream(function(result) { 
+        
+      cn=result.public_id+'.'+result.format;
+      imn=result.url;
+     
+     
+      onFinish();
+      
+    
+      });
+      
+            file.pipe(stream);
+          
+      });
+
+  function onFinish() {
+    db.collection('fruits').insert({Title:img,image:{cn:cn,imn:imn}},function(err, result){
+      if (err)throw err;
+
+      res.redirect('/dashboard?resp='+img);
+    });
+  }
+
+    req.pipe(req.busboy);
+});
+
+
+app.post('/update',function(req,res){
+
+  var img,cn,imn,id;
+req.busboy.on('field', function(fieldname, val) {
+     
+     if(fieldname==="imgname"){
+      img=val;
+      
+   }
+   if(fieldname==="unameid"){
+      id=val;
+      
+   }
+     
+});
+
+  req.busboy.on('file', function (fieldname, file, filename) {
+             
+     
+        var stream = cloudy.uploader.upload_stream(function(result) { 
+        
+      cn=result.public_id+'.'+result.format;
+      imn=result.url;
+     
+     
+      onFinish();
+      
+    
+      });
+      
+            file.pipe(stream);
+          
+      });
+
+  function onFinish() {
+    db.collection('fruits').update({_id:ObjectId(id)},{$set:{Title:img,image:{cn:cn,imn:imn}}},function(err, result){
+      if (err)throw err;
+
+      res.redirect('/dashboard?resp='+img);
+    });
+  }
+
+    req.pipe(req.busboy);
+});
+
+
+app.post('/delete', function(req, res){
+  
+  db.collection('fruits').findOne({_id:ObjectId(req.query.id)}, function(err, result){
+
+    if (result) {
+      var aa= result.image.cn.split('.');
+
+  cloudy.uploader.destroy(aa[0], function(result) {  }, 
+                            { invalidate: true });
+    db.collection('fruits').remove({_id:ObjectId(req.query.id)}, function(err, result1){});
+    res.send(true);
+  }
+});
+
+});
 
 
 http.listen(app.get('port'), function(){
   console.log('listening on *:'+app.get('port'));
 });
 
-// var port = process.env.PORT || 8000;
-// server.listen(port, function() {
-//     console.log("App is running on port " + port);
-// });
-// app.listen(process.env.PORT || 3000, function(){
-//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-// });
