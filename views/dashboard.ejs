@@ -42,22 +42,24 @@
       </li>
       <li><a href="#2" data-toggle="tab">Edit Image</a>
       </li>
+      <li><a href="#v3" data-toggle="tab" style="display: none;">Edit Image</a>
+      </li>
   </ul>
 
 <div class="tab-content">
 
    <div class="tab-pane active" id="1">
    <div class="col-sm-12">
-   <form>
+   <form action="proadd" method="post" enctype="multipart/form-data">
        <div class="col-sm-6 col-md-6 col-md-push-3">
          <div class="form-group"> 
        <label for="full_name_id" class="control-label">Image Name</label>
-       <input type="text" class="form-control" id="" name="" placeholder="Enter name of the image" required>
+       <input type="text" class="form-control" id="" name="imgname" placeholder="Enter name of the image" required>
      </div>
      <br>
       <div class="form-group"> 
        <label for="full_name_id" class="control-label">Upload Image { Size must be 400 x 400 }</label>
-       <input type="file" class="form-control" id="" name="" placeholder="Enter your email-id" required>
+       <input type="file" class="form-control" id="" name="image" placeholder="Enter your email-id" required>
      </div>
      <br>
    <!-- <div class="form-group"> 
@@ -76,19 +78,75 @@
   </div>
 
  <div class="tab-pane" id="2">
- 
+    <% if(products){
+      products.forEach(function(prod){%>
     <div class="col-sm-12 col-md-10 col-md-push-1 liftofitm">
-      <div class="col-sm-4"><img src="apple.png" class="img-responsive" width="200" height="200"></div>
-      <div class="col-sm-4"><h2>Apple</h2></div>
+      <div class="col-sm-4"><%-cloudy.image(prod.image.cn,{ width: 200, height: 200 })%></div>
+      <div class="col-sm-4"><h2><%=prod.Title%></h2></div>
       <div class="col-sm-4">
       <h2>
-        <button class="btn btn-warning btn-lg" >Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn btn-danger btn-lg">Delete</button>
+        <button class="btn btn-warning btn-lg" onclick="edit('<%=prod._id%>', '<%=prod.Title%>');">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger btn-lg" onclick="del('<%=prod._id%>')">Delete</button>
         </h2>
        </div>
     </div>
+    <%});}%>
 
  </div>
+
+     <div class="tab-pane" id="vv3">
+   <div class="col-sm-12">
+   <form action="update" method="post" enctype="multipart/form-data">
+   <input type="hidden" name="unameid" id="unameid">
+       <div class="col-sm-6 col-md-6 col-md-push-3">
+         <div class="form-group"> 
+       <label for="full_name_id" class="control-label">enter new Name11</label>
+       <input type="text" class="form-control" id="imgname" name="imgname" placeholder="" readonly>
+     </div>
+     <br>
+      <div class="form-group"> 
+       <label for="full_name_id" class="control-label">Upload new Image { Size must be 400 x 400 }1111</label>
+       <input type="file" class="form-control" id="" name="image" placeholder="Enter your email-id" required>
+     </div>
+     <br>
+   <!-- <div class="form-group"> 
+    <label for="full_name_id" class="control-label">Order Description</label>
+    <textarea type="text" class="form-control" id="" name="desc" placeholder="Mention the Products you want to order" required></textarea>
+  </div>
+  <br> -->
+       </div>
+
+     <div class="col-sm-12 text-center">
+     <button class="btn btn-lg btn-info">Submit</button>
+     </div>
+    </form>
+
+  </div>
+  </div>
+  <script>
+    function edit(a, b){
+    
+      $('#imgname').val(b);
+      $('#unameid').val(a);
+      $('#vv3').show();
+      $('#2').hide();
+      $('#1').hide();
+    }
+    function del(a){
+      
+      $.ajax({
+        type: 'POST',
+        url: '/delete?id='+a,
+         success: function(data) {
+            alert('product successfully deleted');
+           location.reload();
+      }
+        
+});
+
+    }
+  </script>
+
 
 </div>
 
