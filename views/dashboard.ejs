@@ -81,7 +81,7 @@
     <% if(products){
       products.forEach(function(prod){%>
     <div class="col-sm-12 col-md-10 col-md-push-1 liftofitm">
-      <div class="col-sm-4"><%-cloudy.image(prod.image.cn,{ width: 200, height: 200 })%></div>
+      <div class="col-sm-4"><%-cloudy.image(prod.image.cn,{ width: 200, height: 200 })%></div> <!--<img src="<%=prod.image.imn%>">-->
       <div class="col-sm-4"><h2><%=prod.Title%></h2></div>
       <div class="col-sm-4">
       <h2>
@@ -147,7 +147,11 @@
 
     }
   </script>
-
+<%if(send){%>
+  <script>
+    alert('image successfully added');
+  </script>
+<%}%>
 
 </div>
 

@@ -117,8 +117,7 @@
             <% if(products){
             products.forEach(function(prod){%>
                 <li class="text-center">
-                    <%-cloudy.image(prod.image.cn,{ width: 400, height: 400 })%>
-                    <!-- <img src="apple.png" class="img-responsive"> -->
+                    <img src="<%=prod.image.imn%>" class="img-responsive">
                 </li>
                 <%});}%>
                 <!-- <li class="text-center">
