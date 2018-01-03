@@ -38,9 +38,9 @@
 
   <ul class="nav nav-tabs text-center">
       <li class="active">
-        <a  href="#1" data-toggle="tab">Add Image</a>
+        <a  href="#1" data-toggle="tab" onclick="showA();">Add Image</a>
       </li>
-      <li><a href="#2" data-toggle="tab">Edit Image</a>
+      <li><a href="#2" data-toggle="tab" onclick="showB();">Edit Image</a>
       </li>
       <li><a href="#v3" data-toggle="tab" style="display: none;">Edit Image</a>
       </li>
@@ -79,7 +79,7 @@
 
  <div class="tab-pane" id="2">
     <% if(products){
-      products.forEach(function(prod){%>
+      products.forEach(function(prod){ console.log(prod)%>
     <div class="col-sm-12 col-md-10 col-md-push-1 liftofitm">
       <div class="col-sm-4"><%-cloudy.image(prod.image.cn,{ width: 200, height: 200 })%></div> <!--<img src="<%=prod.image.imn%>">-->
       <div class="col-sm-4"><h2><%=prod.Title%></h2></div>
@@ -100,13 +100,13 @@
    <input type="hidden" name="unameid" id="unameid">
        <div class="col-sm-6 col-md-6 col-md-push-3">
          <div class="form-group"> 
-       <label for="full_name_id" class="control-label">enter new Name11</label>
+       <label for="full_name_id" class="control-label">enter new Name</label>
        <input type="text" class="form-control" id="imgname" name="imgname" placeholder="" readonly>
      </div>
      <br>
       <div class="form-group"> 
-       <label for="full_name_id" class="control-label">Upload new Image { Size must be 400 x 400 }1111</label>
-       <input type="file" class="form-control" id="" name="image" placeholder="Enter your email-id" required>
+       <label for="full_name_id" class="control-label">Upload new Image { Size must be 400 x 400 }</label>
+       <input type="file" class="form-control" id="eimage" name="image" placeholder="Enter your email-id" required>
      </div>
      <br>
    <!-- <div class="form-group"> 
@@ -125,9 +125,9 @@
   </div>
   <script>
     function edit(a, b){
-    
       $('#imgname').val(b);
       $('#unameid').val(a);
+      
       $('#vv3').show();
       $('#2').hide();
       $('#1').hide();
@@ -145,6 +145,16 @@
         
 });
 
+    }
+    function showA(){
+      $('#vv3').hide();
+      $('#2').hide();
+      $('#1').show();
+    }
+    function showB(){
+      $('#vv3').hide();
+      $('#2').show();
+      $('#1').hide();
     }
   </script>
 <%if(send){%>
