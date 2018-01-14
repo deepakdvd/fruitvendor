@@ -127,7 +127,7 @@ app.post('/session-access',function(req,res){
         var user;
         var name= req.body.name;
         var pass= req.body.pass;
-        if (name=="Admin" && pass=="Admin"){
+        if (name=="jadhav.karan123" && pass=="loveu2568"){
           
           req.session.user = name;
           res.redirect('/dashboard');
