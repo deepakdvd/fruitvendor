@@ -4,22 +4,49 @@
   "description": "website",
   "main": "server.js",
   "scripts": {
-    "start":"node server.js"
+    "start": "node server.js"
   },
-  
-  "dependencies" :{
-"express":"4.15.2",
-"http":"0.0.0",
-"nodemailer":"3.1.5",
-"body-parser":"1.17.1",
-"ejs":"2.5.6"
-},
-
+  "dependencies": {
+    "express": "4.15.2",
+    "http": "0.0.0",
+    "nodemailer": "3.1.5",
+    "body-parser": "1.17.1",
+    "ejs": "2.5.6"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3",
+    "bson": "1.0.4",
+    "buffer-shims": "1.0.0",
+    "client-sessions": "0.7.0",
+    "connect-busboy": "0.0.2",
+    "cookie-parser": "1.4.3",
+    "cookies": "0.5.0",
+    "core-util-is": "1.0.2",
+    "es6-promise": "3.2.1",
+    "isarray": "1.0.0",
+    "keygrip": "1.0.1",
+    "lodash": "3.10.1",
+    "mongodb": "2.2.31",
+    "mongodb-core": "2.1.15",
+    "mongoskin": "2.1.0",
+    "cloudinary": "1.9.0",
+    "process-nextick-args": "1.0.7",
+    "q": "1.4.1",
+    "readable-stream": "2.2.7",
+    "require_optional": "1.0.1",
+    "resolve-from": "2.0.0",
+    "safe-buffer": "5.1.1",
+    "streamsearch": "0.1.2",
+    "string_decoder": "1.0.3",
+    "util-deprecate": "1.0.2",
+    "busboy": "0.2.14",
+    "dicer": "0.2.5",
+    "semver": "5.4.1"
+  },
   "author": "deepak",
   "license": "ISC",
   "engines": {
     "node": "6.11.3",
-    "npm":"3.10.10"
+    "npm": "3.10.10"
   }
 }
-
