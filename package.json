@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",
-    "bson": "1.0.4",
+    "bson": "1.1.4",
     "buffer-shims": "1.0.0",
     "client-sessions": "0.7.0",
     "connect-busboy": "0.0.2",
