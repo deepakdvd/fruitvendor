@@ -43,7 +43,7 @@ app.use(bParser.json());
 app.use(bParser.urlencoded({extended:false}));
 
 app.get('/',function(req,res){
-  res.render('index');
+  res.render('');
   
   });
 
