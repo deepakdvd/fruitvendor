@@ -43,7 +43,9 @@ app.use(bParser.json());
 app.use(bParser.urlencoded({extended:false}));
 
 app.get('/',function(req,res){
-  res.render('');
+  db.collection('fruits').find({}).toArray(function(err, result){
+    res.render('index', {products:result,cloudy:cloudy});
+  });
   
   });
 
