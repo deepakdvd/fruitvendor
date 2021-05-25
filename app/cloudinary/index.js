@@ -1,6 +1,6 @@
 'use strict';
 
-var cloudy=require('cloudinary');
+var cloudy=require('cloudinary').v2;
 
 cloudy.config({ 
   cloud_name: 'www-picagroexporter-com', 
