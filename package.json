@@ -26,7 +26,7 @@
     "isarray": "1.0.0",
     "keygrip": "1.0.1",
     "lodash": "3.10.1",
-    "mongodb": "2.2.31",
+    "mongodb": "3.1.13",
     "mongodb-core": "2.1.15",
     "mongoskin": "2.1.0",
     "cloudinary": "1.9.0",
